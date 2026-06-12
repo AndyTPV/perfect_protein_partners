@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Backgrounds */
+  --color-cream: #F5F2EC;
+  --color-parchment: #EDE9E0;
+  --color-surface: #FDFAF5;
+
+  /* Brand */
+  --color-forest: #1C3A2A;
+  --color-forest-dark: #152D20;
+  --color-gold: #A8895A;
+
+  /* Text */
+  --color-ink: #1D1C18;
+  --color-muted: #6B6558;
+  --color-faint: #9C9488;
+  --color-cream-faint: #C8C3B8;
+
+  /* UI */
+  --color-border: #DDD8CE;
+  --color-error: #7A3030;
+
+  /* Typography */
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+html,
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* Honeypot spam trap: off-screen so humans never see it, present in DOM for bots */
+.honeypot-field {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
