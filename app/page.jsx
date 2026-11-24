@@ -1,21 +1,18 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Claims from "@/components/Claims";
-import WhoWeServe from "@/components/WhoWeServe";
-import AboutStrip from "@/components/AboutStrip";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-
-export default function Home() {
-  return (
-    <main>
-      <Header />
-      <Hero />
-      <Claims />
-      <WhoWeServe />
-      <AboutStrip />
-      <Contact />
-      <Footer />
-    </main>
-  );
-}
+import Link from "next/link";
+import Image from "next/image";
+import ProcessExplorer from "@/components/ProcessExplorer";
+import ResultsExplorer from "@/components/ResultsExplorer";
+import ProductStory from "@/components/ProductStory";
+import SealArtwork from "@/components/SealArtwork";
+import CallToAction from "@/components/CallToAction";
+export const metadata = { alternates: { canonical: "/" } };
+export default function Home() { return <>
+  <section className="hero" aria-labelledby="hero-title"><Image className="hero-image" src="/images/protein-hero.jpg" alt="Fictional Partner Protein tub with an illustrative three-star PPP seal on the lower-right label, surrounded by protein powder under sapphire lighting" fill priority sizes="100vw" /><div className="hero-shade" /><div className="wrap hero-content"><p className="eyebrow light">The PPP seal</p><h1 id="hero-title">Your protein.<br />An earned<br /><em>distinction.</em></h1><p className="hero-description">Know the profile behind your product.<br />Explore the recognition it could earn.</p><div className="hero-actions"><Link className="button" href="/contact?interest=seal">Explore qualification</Link><Link className="text-link light-link" href="/process">Discover the process</Link></div></div><span className="hero-caption">Illustrative packaging · three-star example</span></section>
+  <ul className="wrap proof-strip" aria-label="The PPP approach" role="list"><li>Independent lab testing</li><li>Clear interpretation</li><li>Earned recognition</li></ul>
+  <section className="wrap section split seal-section" id="seal" aria-labelledby="seal-title"><div><p className="eyebrow">Recognition with a reason</p><h2 id="seal-title">A seal with<br />a story behind it.</h2><p className="lead">Your team puts thought into every product. Give the protein inside it a closer look.</p><p>PPP combines independent finished-product amino acid testing with a clear results review and evaluation against its protein-quality criteria. Qualifying products can earn a distinction your brand can explain and share.</p><Link className="text-link" href="/seal">Explore the PPP seal</Link></div><SealArtwork /></section>
+  <section className="section pale" aria-labelledby="paths-title"><div className="wrap"><div className="section-heading"><div><p className="eyebrow">A closer look at your product</p><h2 id="paths-title">What could your<br />product story show?</h2></div><p>Start with the question that matters most to your brand.</p></div><div className="paths"><Link href="/seal" className="path"><span className="eyebrow">Recognition</span><h3>Could your product earn the seal?</h3><p>Explore an earned endorsement based on measured findings and PPP’s protein-quality evaluation.</p><span className="path-link">Explore recognition</span></Link><Link href="/testing" className="path"><span className="eyebrow">Knowledge</span><h3>Know the protein you sell.</h3><p>Understand what was measured, what it means and which questions your team could explore next.</p><span className="path-link">Explore product knowledge</span></Link><Link href="/transparency" className="path"><span className="eyebrow">Transparency</span><h3>Show what stands behind it.</h3><p>Discuss how approved findings could support clearer product education and customer conversations.</p><span className="path-link">Explore transparency</span></Link></div></div></section>
+  <section className="section wrap" id="process" aria-labelledby="process-title"><div className="section-heading"><div><p className="eyebrow">From question to clarity</p><h2 id="process-title">A clear path.<br />From the first conversation.</h2></div><p>Explore what happens at each stage of the evaluation.</p></div><ProcessExplorer /></section>
+  <section className="section dark" id="results" aria-labelledby="results-title"><div className="wrap results-layout"><div><p className="eyebrow light">Your profile, explained</p><h2 id="results-title">Measured findings.<br />A clearer business picture.</h2><p className="lead">Make the findings useful to the people building, selling and explaining your product.</p><p>The starting point is your measured profile and PPP’s evaluation. Depending on the agreed scope, deeper analysis can explore product strengths, messaging, relevant comparisons, supplier questions and future development priorities.</p><Link href="/testing" className="text-link light-link">Discover the reporting options</Link></div><ResultsExplorer /></div></section>
+  <section className="section wrap split story-section" id="transparency" aria-labelledby="transparency-title"><ProductStory /><div><p className="eyebrow">Information worth sharing</p><h2 id="transparency-title">From the package<br />to the product story.</h2><p className="lead">Give interested customers somewhere useful to go.</p><p>A QR-linked product page could explain an earned seal, the evaluation scope and selected approved findings. Your team agrees what is shared; detailed reports remain private unless disclosure is authorized.</p><p className="fine-print">Public summaries, QR support and messaging development are proposed options, subject to agreed scope and client authorization.</p><Link href="/transparency" className="text-link">Explore the product-story approach</Link></div></section>
+  <section className="section pale"><div className="wrap split opportunities"><div><p className="eyebrow">Explore what comes next</p><h2>Clarity can open<br />new possibilities.</h2></div><div><p className="lead">The results can also start a conversation about your next formulation.</p><p>Separately scoped SRT work can explore potential amino acid adjustments and raw-material cost opportunities for your product.</p><details><summary>Do I need to change my formula to apply?</summary><p>A formulation change is not required to have your existing product evaluated. Testing and PPP’s criteria determine whether the submitted product qualifies.</p></details><details><summary>What does amino acid testing establish?</summary><p>Profiling measures composition in the sample tested. It does not independently verify digestion, muscle protein synthesis, overall safety or the full nutrition label. Optional metals testing has a separate scope.</p></details><Link href="/opportunities" className="text-link">Explore formulation opportunities</Link></div></div></section><CallToAction />
+  </>; }

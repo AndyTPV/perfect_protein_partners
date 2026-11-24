@@ -1,0 +1,1 @@
+export default function robots() { return process.env.VERCEL_ENV === "production" ? { rules: { userAgent: "*", allow: "/" }, sitemap: "https://www.perfectproteinpartners.com/sitemap.xml" } : { rules: { userAgent: "*", disallow: "/" } }; }

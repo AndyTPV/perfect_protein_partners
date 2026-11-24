@@ -1,0 +1,1 @@
+export default function sitemap() { return ["", "/seal", "/process", "/testing", "/transparency", "/opportunities", "/about", "/contact"].map(path => ({ url: `https://www.perfectproteinpartners.com${path}`, changeFrequency: "monthly", priority: path ? 0.7 : 1 })); }
