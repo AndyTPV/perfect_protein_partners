@@ -46,9 +46,10 @@
 .qr-product-package>img{width:100%;height:auto}
 .qr-package-seal{position:absolute;left:54%;top:43%;width:18%;pointer-events:none}
 .qr-package-seal svg{display:block;width:100%;height:auto}
-.qr-package-code{position:absolute;left:74%;top:40%;width:14%;aspect-ratio:1;background:white;border-radius:2px;box-shadow:0 0 0 3px #235aff55;animation:qr-beacon 2.5s ease-in-out 4}
+.qr-package-code{position:absolute;left:74%;top:42.75%;width:6%;aspect-ratio:1;background:white;border-radius:2px;box-shadow:0 0 0 2px #235aff55;animation:qr-beacon 2.5s ease-in-out 4}
+.qr-package-code::after{content:"";position:absolute;inset:-14px}
 .qr-package-code svg{display:block;width:100%;height:100%}
-.qr-package-code:hover,.qr-package-code:focus-visible{box-shadow:0 0 0 4px #4e86ff,0 0 24px #397bff88}
+.qr-package-code:hover,.qr-package-code:focus-visible{box-shadow:0 0 0 3px #4e86ff,0 0 14px #397bff88}
 .qr-demo-instruction{text-align:center;padding:0 20px;margin-top:-25px;position:relative}
 .qr-demo-instruction>a{font-size:1.125rem;font-weight:600;color:#c6d8ff;border-bottom:1px solid #527ab8;padding-bottom:5px}
 .qr-demo-instruction>p{color:#94acca;font-size:.875rem;margin:14px 0 24px}
@@ -56,7 +57,7 @@
 .qr-demo-flow{display:flex;justify-content:center;gap:20px;padding:20px 18px 0;margin:0 22px;list-style:none;border-top:1px solid #22406d;font-size:.75rem;line-height:1.5;color:#c7d7ef}
 .qr-demo-flow>li{margin:0}.qr-demo-flow span{display:block;color:#6c9bff;font-size:.625rem;letter-spacing:.12em;margin-bottom:6px}
 .qr-demo-caption{color:#87a0c3;font-size:.6875rem;text-align:center;margin:22px 15px 0}
-@keyframes qr-beacon{0%,100%{box-shadow:0 0 0 3px #235aff55}50%{box-shadow:0 0 0 8px #397bff44,0 0 24px #397bff66}}
+@keyframes qr-beacon{0%,100%{box-shadow:0 0 0 2px #235aff55}50%{box-shadow:0 0 0 4px #397bff44,0 0 14px #397bff66}}
 .qr-summary-dialog{width:min(940px,calc(100% - 32px));max-height:90dvh;margin:auto;padding:0;border:1px solid #34517d;border-radius:10px;background:#07152b;color:white;box-shadow:0 30px 100px #0008;overflow-y:auto;overscroll-behavior:contain}
 .qr-summary-dialog::backdrop{background:#020a1cd9;backdrop-filter:blur(7px)}
 .qr-summary-toolbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:15px;background:#07152bf5;border-bottom:1px solid #294363;padding:15px 26px;font-size:.8125rem;color:#c5d6f0}
