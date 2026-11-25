@@ -1,7 +1,36 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import PackagingSeal from "@/components/PackagingSeal";
+import QrCode from "@/components/QrCode";
+import ProductSummary from "@/components/ProductSummary";
+import { examplePath, examplePreviewOrigin } from "@/lib/product-example.mjs";
+
 export default function ProductStory() {
- const dialog = useRef(null);
- return <><div className="product-story-preview"><p className="eyebrow">Proposed product experience</p><div className="phone"><div className="phone-speaker" aria-hidden="true" /><div className="phone-content"><span className="phone-brand">PPP / Product story</span><div className="phone-image"><Image src="/images/protein-hero.jpg" alt="Unbranded demonstration protein product" width={600} height={338} sizes="230px" /></div><span className="fine-print">Demonstration product</span><h3>A clearer story<br />behind the seal.</h3><div className="phone-lines" aria-hidden="true"><i /><i /><i /></div><button className="button small" onClick={() => dialog.current.showModal()}>Explore the example</button></div></div></div><dialog className="product-dialog" ref={dialog} aria-labelledby="product-story-title" onClick={e => { if (e.target === e.currentTarget) { const r = e.currentTarget.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.currentTarget.close(); } }}><button type="button" className="dialog-close" onClick={() => dialog.current.close()} aria-label="Close product story">Close</button><p className="eyebrow">Product-page concept</p><h2 id="product-story-title">A product story<br />with context.</h2><p className="notice">Demonstration only. This product has not been evaluated or awarded a seal.</p><p>A client-approved page could identify the evaluated product, explain its earned recognition and summarize selected findings.</p><ul><li>Product and formulation evaluated</li><li>Awarded tier and approved explanation</li><li>Testing scope and evaluation date</li><li>Selected authorized findings</li><li>Context and limits of the evaluation</li></ul><p className="fine-print">QR pages and public summaries are proposed services, subject to scope and authorization. Detailed reports remain private unless disclosure is authorized.</p></dialog></>;
+  const dialog = useRef(null), previousOverflow = useRef(""), opened = useRef(false);
+  const [origin, setOrigin] = useState(examplePreviewOrigin);
+  useEffect(() => { setOrigin(window.location.origin); return () => { if (opened.current) document.body.style.overflow = previousOverflow.current; }; }, []);
+  function openSummary(e) {
+    if (!dialog.current?.showModal || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault(); previousOverflow.current = document.body.style.overflow;
+    dialog.current.showModal(); opened.current = true; document.body.style.overflow = "hidden";
+  }
+  return <>
+    <div className="qr-product-demo">
+      <p className="eyebrow light">From the wrapper to the results</p>
+      <div className="qr-product-package">
+        <Image src="/images/partner-protein-qr-bar.jpg" alt="Fictional Partner Protein vanilla bar with a PPP seal and clickable QR code on the front of the wrapper" width={1536} height={1024} sizes="(max-width:760px) 100vw, 50vw" />
+        <div className="qr-package-seal"><PackagingSeal /></div>
+        <a className="qr-package-code" href={examplePath} onClick={openSummary} aria-haspopup="dialog" aria-label="Open the example product summary from the packaging QR code"><QrCode value={`${origin}${examplePath}`} /></a>
+      </div>
+      <div className="qr-demo-instruction"><span className="qr-pointer" aria-hidden="true">↗</span><a href={examplePath} onClick={openSummary} aria-haspopup="dialog">Click or scan to explore</a><p>One code. A closer look at the product.</p></div>
+      <ol className="qr-demo-flow" aria-label="How the product QR works"><li><span>01</span> Find the seal</li><li><span>02</span> Scan the code</li><li><span>03</span> View the summary</li></ol>
+      <p className="qr-demo-caption">Demonstration packaging · three-star example</p>
+    </div>
+    <dialog className="qr-summary-dialog" ref={dialog} aria-labelledby="qr-summary-title" onClose={() => { opened.current = false; document.body.style.overflow = previousOverflow.current; }} onClick={e => { if (e.target !== e.currentTarget) return; const r = e.currentTarget.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.currentTarget.close(); }}>
+      <div className="qr-summary-toolbar"><span id="qr-summary-title">Example product summary</span><button type="button" onClick={() => dialog.current.close()} autoFocus aria-label="Close example product summary">Close ×</button></div>
+      <ProductSummary />
+      <div className="qr-summary-link"><a className="text-link light-link" href={examplePath} target="_blank" rel="noopener noreferrer">Open the full summary page ↗</a></div>
+    </dialog>
+  </>;
 }
