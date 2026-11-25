@@ -23,14 +23,14 @@ export default function ProductStory() {
         <div className="qr-package-seal"><PackagingSeal /></div>
         <a className="qr-package-code" href={examplePath} onClick={openSummary} aria-haspopup="dialog" aria-label="Open the example product summary from the packaging QR code"><QrCode value={`${origin}${examplePath}`} /></a>
       </div>
-      <div className="qr-demo-instruction"><span className="qr-pointer" aria-hidden="true">↗</span><a href={examplePath} onClick={openSummary} aria-haspopup="dialog">Click or scan to explore</a><p>One code. A closer look at the product.</p></div>
+      <div className="qr-demo-instruction"><svg className="qr-pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg><a href={examplePath} onClick={openSummary} aria-haspopup="dialog">Click or scan to explore</a><p>One code. A closer look at the product.</p></div>
       <ol className="qr-demo-flow" aria-label="How the product QR works"><li><span>01</span> Find the seal</li><li><span>02</span> Scan the code</li><li><span>03</span> View the summary</li></ol>
       <p className="qr-demo-caption">Demonstration packaging · three-star example</p>
     </div>
     <dialog className="qr-summary-dialog" ref={dialog} aria-labelledby="qr-summary-title" onClose={() => { opened.current = false; document.body.style.overflow = previousOverflow.current; }} onClick={e => { if (e.target !== e.currentTarget) return; const r = e.currentTarget.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) e.currentTarget.close(); }}>
       <div className="qr-summary-toolbar"><span id="qr-summary-title">Example product summary</span><button type="button" onClick={() => dialog.current.close()} autoFocus aria-label="Close example product summary">Close ×</button></div>
       <ProductSummary />
-      <div className="qr-summary-link"><a className="text-link light-link" href={examplePath} target="_blank" rel="noopener noreferrer">Open the full summary page ↗</a></div>
+      <div className="qr-summary-link"><a className="text-link light-link" href={examplePath} target="_blank" rel="noopener noreferrer">Open the full summary page</a></div>
     </dialog>
   </>;
 }

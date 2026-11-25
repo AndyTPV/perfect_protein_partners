@@ -52,7 +52,7 @@
 .qr-demo-instruction{text-align:center;padding:0 20px;margin-top:-25px;position:relative}
 .qr-demo-instruction>a{font-size:1.125rem;font-weight:600;color:#c6d8ff;border-bottom:1px solid #527ab8;padding-bottom:5px}
 .qr-demo-instruction>p{color:#94acca;font-size:.875rem;margin:14px 0 24px}
-.qr-pointer{display:block;color:#79a4ff;font-size:1.8rem;line-height:1;margin-bottom:12px}
+.qr-pointer{display:block;color:#79a4ff;width:26px;height:26px;margin:0 auto 12px}
 .qr-demo-flow{display:flex;justify-content:center;gap:20px;padding:20px 18px 0;margin:0 22px;list-style:none;border-top:1px solid #22406d;font-size:.75rem;line-height:1.5;color:#c7d7ef}
 .qr-demo-flow>li{margin:0}.qr-demo-flow span{display:block;color:#6c9bff;font-size:.625rem;letter-spacing:.12em;margin-bottom:6px}
 .qr-demo-caption{color:#87a0c3;font-size:.6875rem;text-align:center;margin:22px 15px 0}
