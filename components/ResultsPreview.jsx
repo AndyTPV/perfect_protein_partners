@@ -16,14 +16,14 @@ const tabs = [
  ] },
 ];
 function ReportBrand() {
- return <svg className="report-brand" viewBox="0 0 230 64" role="img" aria-label="PPP Protein Profile">
-   <text x="0" y="49" fill="#12336b" fontFamily="Arial, Helvetica, sans-serif" fontSize="57" fontWeight="900" fontStyle="italic" letterSpacing="-4">PPP</text>
-   <path d="M116 8V55" stroke="#315baf" strokeWidth="1.5" />
-   <g fill="#12336b" fontFamily="Arial, Helvetica, sans-serif" fontSize="17" fontWeight="800" letterSpacing=".5"><text x="130" y="29">PROTEIN</text><text x="130" y="50">PROFILE</text></g>
+ return <svg className="report-brand" viewBox="0 0 270 64" role="img" aria-label="PPP Protein Profile">
+   <text x="0" y="49" fill="#12336b" fontFamily="Arial, Helvetica, sans-serif" fontSize="57" fontWeight="900" fontStyle="italic" letterSpacing="-4" textLength="124" lengthAdjust="spacingAndGlyphs">PPP</text>
+   <path d="M146 8V55" stroke="#315baf" strokeWidth="1.5" />
+   <g fill="#12336b" fontFamily="Arial, Helvetica, sans-serif" fontSize="17" fontWeight="800" letterSpacing=".5"><text x="164" y="29">PROTEIN</text><text x="164" y="50">PROFILE</text></g>
  </svg>;
 }
 export default function ResultsPreview() {
  const [active, setActive] = useState(0); const id = useId(); const buttons = useRef([]); const tab = tabs[active];
  function keydown(e) { if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) return; e.preventDefault(); const n = e.key === "Home" ? 0 : e.key === "End" ? 2 : (active + (e.key === "ArrowRight" ? 1 : 2)) % 3; setActive(n); buttons.current[n]?.focus(); }
- return <div className="results-explorer"><div className="report-tabs" role="tablist" aria-label="Report contents" onKeyDown={keydown}>{tabs.map((t, i) => <button type="button" key={t.name} ref={el => { buttons.current[i] = el; }} role="tab" id={`${id}-tab-${i}`} aria-controls={`${id}-panel`} aria-selected={active === i} tabIndex={active === i ? 0 : -1} onClick={() => setActive(i)}>{t.name}</button>)}</div><div className="report-paper report-review" role="tabpanel" id={`${id}-panel`} aria-labelledby={`${id}-tab-${active}`} tabIndex={0}><div className="report-header"><ReportBrand /><span>Results overview<br />Example layout</span></div><h3>{tab.title}</h3>{active === 0 ? <ProfileChart /> : <dl className="report-points">{tab.items.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>}{tab.description && <p>{tab.description}</p>}</div></div>;
+ return <div className="results-explorer"><div className="report-tabs" role="tablist" aria-label="Report contents" onKeyDown={keydown}>{tabs.map((t, i) => <button type="button" key={t.name} ref={el => { buttons.current[i] = el; }} role="tab" id={`${id}-tab-${i}`} aria-controls={`${id}-panel`} aria-selected={active === i} tabIndex={active === i ? 0 : -1} onClick={() => setActive(i)}>{t.name}</button>)}</div><div className="report-paper report-review" role="tabpanel" id={`${id}-panel`} aria-labelledby={`${id}-tab-${active}`} tabIndex={0}><div className="report-header"><ReportBrand /><span>Results overview<br />Example layout</span></div><h3>{tab.title}</h3>{active === 0 ? <ProfileChart /> : <dl className={`report-points${active === 1 ? " report-points-spread" : ""}`}>{tab.items.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>}{tab.description && <p className="profile-chart-callout">{tab.description}</p>}</div></div>;
 }
