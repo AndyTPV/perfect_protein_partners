@@ -1,6 +1,7 @@
 "use client";
 import { useId, useRef, useState } from "react";
 import ProfileChart from "@/components/ProfileChart";
+import ReportBrand from "@/components/ReportBrand";
 const tabs = [
  { name: "The profile", title: "Know what’s inside.", description: "See how individual amino acids contribute to the overall protein profile." },
  { name: "The interpretation", title: "Put the facts in context.", items: [
@@ -15,13 +16,6 @@ const tabs = [
    ["Future product development", "Use the analysis to prioritize reformulation opportunities and new product ideas."]
  ] },
 ];
-function ReportBrand() {
- return <svg className="report-brand" viewBox="0 0 270 64" role="img" aria-label="PPP Protein Profile">
-   <text x="0" y="49" fill="#12336b" fontFamily="Arial, Helvetica, sans-serif" fontSize="57" fontWeight="900" fontStyle="italic" letterSpacing="-4" textLength="124" lengthAdjust="spacingAndGlyphs">PPP</text>
-   <path d="M146 8V55" stroke="#315baf" strokeWidth="1.5" />
-   <g fill="#12336b" fontFamily="Arial, Helvetica, sans-serif" fontSize="17" fontWeight="800" letterSpacing=".5"><text x="164" y="29">PROTEIN</text><text x="164" y="50">PROFILE</text></g>
- </svg>;
-}
 export default function ResultsPreview() {
  const [active, setActive] = useState(0); const id = useId(); const buttons = useRef([]); const tab = tabs[active];
  function keydown(e) { if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) return; e.preventDefault(); const n = e.key === "Home" ? 0 : e.key === "End" ? 2 : (active + (e.key === "ArrowRight" ? 1 : 2)) % 3; setActive(n); buttons.current[n]?.focus(); }

@@ -1,16 +1,6 @@
-# PPP website overhaul — review checkpoint
+# PPP website redesign — review branch
 
-Working branch: `redesign/website-overhaul`. Baseline: `16698a0a5b041b6b07d5e79137a4ade44239bfeb` from `AndyTPV/perfect_protein_partners`.
-
-This is the first Next.js implementation of the approved navy/blue website direction. It is a review build, not an instruction to release to the production domain.
-
-## Included
-
-- Responsive homepage, seal, testing/reporting, process, transparency, formulation opportunities, about and contact pages.
-- Keyboard-accessible process and report tabs, mobile navigation and native product-story dialog.
-- Restyled enquiry form, server-side validation, Turnstile and Resend integration, explicit provider error handling, and preview mode that never sends enquiries.
-- Updated metadata, canonical URLs, sharing artwork, icons, sitemap and robots rules.
-- The approved generated hero image, compressed for the website. Concept imagery depicts no actual awarded product or client.
+The approved homepage leads to six primary pages: Home, The seal, Testing & results, Consulting & formulation, About PPP and Contact. The working branch is `redesign/website-overhaul`; production remains on `main`.
 
 ## Run
 
@@ -21,24 +11,31 @@ npm test
 npm run build
 ```
 
-## Enquiry delivery
+## Review with Andy
 
-The form only calls Turnstile and Resend when `VERCEL_ENV=production`. Local and Vercel Preview builds validate a sample enquiry and return a clear preview response without calling external services or storing messages.
+Open `/review` in a local or Vercel Preview build. Nine stable IDs, `PPP-A01` through `PPP-A09`, link to highlighted notes beside the relevant content. The IDs and questions live in `lib/andy-review.mjs`; a section's `reviewId` connects it to its note.
 
-Production retains the existing environment-variable names: `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`. Configure these in Vercel; do not place their values in source code. No secret values were copied into this branch.
+- A01–A03: star meanings, packaging permissions and QR publishing.
+- A04–A05: report deliverables and practical testing arrangements.
+- A06–A07: SRT explanation and consulting requirements.
+- A08–A09: company story and Andy/team background.
 
-Before release, verify the allowed Turnstile hostnames and recipient configuration, then authorize an actual delivery check. Unit tests use mocked providers and send no messages.
+These are requests for input, not finalized criteria or terms. Review notes and their banner link are omitted when `VERCEL_ENV=production`; `/review` returns not found in that environment. The notes should be resolved before production release, not merely hidden.
 
-## Content basis and review
+## Navigation and examples
 
-Copy reflects the November 19 seal, product-knowledge and transparency flyers (v3), seal outreach companion (v2) and results-preview document (v2). No internal sample measurements or client identifiers are reproduced. Detailed reporting capabilities are subject to agreed scope. QR product pages and public summaries remain proposed services. A live award database and tier thresholds are not implemented.
+`/process` permanently redirects to `/testing#how-it-works`. `/transparency` permanently redirects to `/seal#product-transparency`. Current navigation links directly to the consolidated destinations. `/opportunities` remains the stable URL for Consulting & formulation.
 
-Final logo/seal artwork, tier explanations, contact/privacy wording, any case-study permissions, and film assets require review before launch. An initial motion study was prepared; video production is paused and the banner currently uses the approved still image.
+The packaging QR opens a native dialog on click and the same summary at `/products/partner-protein-example` on scan. It encodes the current website origin after hydration. The standalone example has noindex metadata and stays out of the sitemap and main menu. It is unlisted, not access-controlled. Vercel Preview authentication may still require a login when scanning from another device.
 
-## Checkpoint and next review
+All Partner Protein data and packaging are fictional. The report preview uses mg per gram of protein. The QR summary uses quantities per 100 g of product. Its figures and group totals share a tested source in `lib/product-example.mjs`. SRT color grouping illustrates the layout and is not a computed evaluation. The QR SVG has been independently decoded during development.
 
-The November 21, 2026 desktop version is approved as a stopping point. The mobile homepage layout needs a dedicated review in the next session. The audience line remains removed pending wording from Andy, and video production is paused while the approved still image is used in the banner.
+## Enquiries
 
-## GitHub workflow
+The form only calls Turnstile and Resend when `VERCEL_ENV=production`. Local and Vercel Preview builds validate an enquiry and show a preview response without sending or storing a message.
 
-Keep this checkpoint on `redesign/website-overhaul` with a draft pull request for review. Complete the mobile and remaining content reviews before merging or releasing. The current production website stays on `main`.
+Production uses `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY`. Configure values in Vercel, never in source. Real contact delivery and production challenge configuration require an authorized release check.
+
+## Release status
+
+This is a draft review checkpoint. No production merge, promotion or domain switch is authorized by the review workflow. Mobile review and Andy's flagged details remain pending. Keep the company identity distinct from product-specific star ratings. Testing scope, contextual limitations and cost uncertainty are explained on their relevant pages.

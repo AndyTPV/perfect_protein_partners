@@ -11,3 +11,10 @@ test("accepted provider receipt completes the enquiry", async () => { const run 
 test("provider timeout is a recoverable error", async () => { const run = createContactHandler({ verifyChallenge: async () => true, sendEmail: async () => { throw new Error("timeout"); } }); assert.equal((await run(form())).status, "error"); });
 test("honeypot prevents service calls", async () => { let called = false; const run = createContactHandler({ verifyChallenge: async () => { called = true; }, sendEmail: async () => { called = true; } }); await run(form({ website: "spam.example" })); assert.equal(called, false); });
 test("header newlines and unrecognized interests are rejected", async () => { const run = createContactHandler({ preview: true }); const r = await run(form({ name: "Demo\nInjected", interest: "unknown" })); assert.ok(r.fieldErrors.name); assert.ok(r.fieldErrors.interest); });
+test("cost enquiries are accepted in preview without calling providers", async () => {
+ const unexpected = async () => { throw new Error("No providers in preview"); };
+ const run = createContactHandler({ preview: true, verifyChallenge: unexpected, sendEmail: unexpected });
+ const result = await run(form({ interest: "cost" }));
+ assert.equal(result.status, "preview");
+ assert.deepEqual(result.fieldErrors, {});
+});

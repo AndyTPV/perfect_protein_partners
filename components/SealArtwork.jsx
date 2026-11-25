@@ -1,5 +1,5 @@
-export default function SealArtwork({ featured = false }) {
-  if (featured) return <figure className="seal-feature">
+export default function SealArtwork() {
+  return <figure className="seal-feature">
     <div className="seal-feature-glow" aria-hidden="true" />
     <svg className="seal-feature-mark" viewBox="0 0 420 132" role="img" aria-label="PPP Protein Profile — illustrative three-star rating">
       <text x="15" y="76" fill="white" fontFamily="Arial, Helvetica, sans-serif" fontWeight="900" fontStyle="italic" fontSize="82" letterSpacing="-5">PPP</text>
@@ -11,5 +11,4 @@ export default function SealArtwork({ featured = false }) {
     </svg>
     <figcaption>Illustrative three-star seal</figcaption>
   </figure>;
-  return <div className="seal-stage" aria-label="Concept illustration of PPP distinction seal"><div className="seal-orbit" aria-hidden="true" /><div className="seal-artwork"><span>Perfect Protein Partners</span><strong>PPP</strong><div className="seal-rule" /><b>Distinction</b><small>Protein-quality evaluation</small></div><p className="fine-print">Seal design illustration</p></div>;
 }

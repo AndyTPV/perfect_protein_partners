@@ -12,5 +12,5 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   const review = process.env.VERCEL_ENV !== "production";
-  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a>{review && <aside className="review-banner">PPP website review build <span>November 2026</span></aside>}<Header /><main id="main">{children}</main><Footer />{!review && <Analytics />}</body></html>;
+  return <html lang="en"><body><a className="skip-link" href="#main">Skip to content</a>{review && <aside className="review-banner">PPP website review build <a href="/review">Andy review · 9 topics</a></aside>}<Header /><main id="main">{children}</main><Footer />{!review && <Analytics />}</body></html>;
 }
