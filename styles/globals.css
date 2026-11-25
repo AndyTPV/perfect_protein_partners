@@ -13,3 +13,21 @@
 .seal-feature-mark{display:block;width:100%;max-width:420px;height:auto;overflow:visible;filter:drop-shadow(0 3px 15px #306fff40)}
 .seal-feature figcaption{position:absolute;bottom:30px;color:#a5bbdf;font-size:.75rem;letter-spacing:.05em;text-align:center}
 @media(max-width:760px){.seal-feature{min-height:290px;padding:35px 25px 60px}.seal-feature figcaption{bottom:25px}}
+
+/* Homepage report preview: compact brand, measured axes and fictional example profile. */
+.report-review{min-height:610px}
+.report-review .report-header{gap:20px}
+.report-brand{display:block;width:165px;height:auto;flex:0 1 165px;min-width:110px}
+.report-review .report-header>span{flex-shrink:0}
+.profile-chart-scroll{max-width:100%;overflow-x:auto;margin-bottom:24px;border-radius:3px;scrollbar-width:thin}
+.profile-chart{display:block;width:100%;min-width:390px;height:auto;color:#506380}
+.chart-grid{stroke:#e3eaf6;stroke-width:1}
+.chart-axis{stroke:#9bacc8;stroke-width:1;fill:none}
+.chart-unit,.chart-tick,.chart-label,.chart-axis-title{font-family:Arial,Helvetica,sans-serif;fill:#506380}
+.chart-unit{font-size:12px;font-weight:600}.chart-tick{font-size:11px}.chart-label{font-size:10px;font-weight:600}.chart-axis-title{font-size:12px}
+.chart-bar{fill:#91b0f7}.chart-tail{fill:#235aff}
+.profile-chart-legend{display:flex;justify-content:center;gap:22px;min-width:390px;font-size:.75rem;color:#506380;padding:8px 0 10px}
+.profile-chart-legend>span{display:flex;align-items:center;gap:7px}
+.profile-chart-legend i{display:inline-block;width:10px;height:10px;border-radius:2px;background:#91b0f7}.profile-chart-legend .tail-key{background:#235aff}
+.report-review .report-points{margin-bottom:0}.report-review .report-points>div:last-child{border-bottom:0}
+@media(max-width:760px){.report-review{min-height:610px}.report-review .report-header{gap:12px}.report-brand{width:145px;flex-basis:145px}}
