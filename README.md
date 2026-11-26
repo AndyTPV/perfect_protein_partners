@@ -11,16 +11,9 @@ npm test
 npm run build
 ```
 
-## Review with Andy
+## Private walkthrough references
 
-Open `/review` in a local or Vercel Preview build. Nine stable IDs, `PPP-A01` through `PPP-A09`, link to highlighted notes beside the relevant content. The IDs and questions live in `lib/andy-review.mjs`; a section's `reviewId` connects it to its note.
-
-- A01–A03: star meanings, packaging permissions and QR publishing.
-- A04–A05: report deliverables and practical testing arrangements.
-- A06–A07: SRT explanation and consulting requirements.
-- A08–A09: company story and Andy/team background.
-
-These are requests for input, not finalized criteria or terms. Review notes and their banner link are omitted when `VERCEL_ENV=production`; `/review` returns not found in that environment. The notes should be resolved before production release, not merely hidden.
+Small `*** PPP-A01` through `*** PPP-A09` references sit beneath the relevant sections in previews. The detailed questions are in the separate walkthrough document and `docs/andy-review.md`; they are not rendered on the website. There is no review banner or checklist link, and `/review` returns not found in every environment. References are omitted when `VERCEL_ENV=production`. Andy's pending input still needs resolution before a production launch.
 
 ## Navigation and examples
 

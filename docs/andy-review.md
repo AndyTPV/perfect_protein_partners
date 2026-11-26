@@ -1,6 +1,6 @@
-# Andy website review checklist
+# Private website walkthrough reference
 
-Preview walkthrough: `/review`. Each identifier appears beside the relevant website section. These notes are hidden in production.
+Each small `*** PPP-Axx` marker matches an entry below. The questions are kept in this separate reference and are not displayed on the website. Markers are hidden in production.
 
 ## PPP-A01 — Star-rating explanations
 
