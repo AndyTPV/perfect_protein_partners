@@ -13,7 +13,7 @@ npm run build
 
 ## Private walkthrough references
 
-Small `*** PPP-A01` through `*** PPP-A09` references sit beneath the relevant sections in previews. The detailed questions are in the separate walkthrough document and `docs/andy-review.md`; they are not rendered on the website. There is no review banner or checklist link, and `/review` returns not found in every environment. References are omitted when `VERCEL_ENV=production`. Andy's pending input still needs resolution before a production launch.
+Small `*** PPP-A02`, `*** PPP-A06`, `*** PPP-A08` and `*** PPP-A09` references sit beneath the relevant sections in previews. The detailed questions are in the separate walkthrough document and `docs/andy-review.md`; they are not rendered on the website. There is no review banner or checklist link, and `/review` returns not found in every environment. References are omitted when `VERCEL_ENV=production`. Andy's pending input still needs resolution before a production launch.
 
 ## Navigation and examples
 
