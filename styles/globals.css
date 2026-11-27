@@ -101,3 +101,53 @@
 @media(max-width:760px){.detail-contents{gap:10px 16px}}
 
 .andy-reference{display:block;width:fit-content;font-size:10px;line-height:1.4;letter-spacing:.025em;color:#7a879c;margin-top:10px;scroll-margin-top:110px}
+
+/* Mobile walkthrough: compact steps and a report that fits its viewport. */
+.mobile-profile-chart{display:none}
+@media(max-width:760px){
+ .product-paths,#process{padding-block:38px}
+ .product-paths .section-heading,#process .section-heading{margin-bottom:22px}
+ .product-paths .eyebrow,#process .section-heading .eyebrow{margin-bottom:12px}
+ .product-paths h2,#process h2{font-size:2rem;line-height:1.12}
+ .product-paths .path,.product-paths .path+.path{padding:18px 0}
+ .product-paths .path:last-child{padding-bottom:0}
+ .product-paths .path .eyebrow{margin-bottom:4px}
+ .product-paths .path h3{font-size:1.5rem;margin:4px 0 10px}
+ .product-paths .path p{margin-bottom:10px;line-height:1.55}
+ .product-paths .path-link{padding-top:0}
+ #process .process-layout{gap:20px}
+ #process .process-step{padding:15px 0;gap:12px}
+ #process .process-step strong{font-size:1.0625rem}
+ #process .process-step small{margin-top:4px;line-height:1.45}
+ #process .process-panel{min-height:0;padding:22px}
+ #process .process-panel .eyebrow{margin-bottom:10px}
+ #process .panel-symbol{height:60px}
+ #process .panel-symbol:before{width:40px;height:40px;box-shadow:0 0 0 8px #e3ebfb}
+ #process .panel-symbol span{font-size:1.9rem}
+ #process .process-panel h3{font-size:1.5rem;margin:12px 0}
+ #process .process-panel p:last-child{font-size:.9375rem;line-height:1.6}
+ .results-layout{grid-template-columns:minmax(0,1fr)}
+ .results-layout>*,.results-explorer,.report-review{min-width:0;max-width:100%}
+ .report-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+ .report-tabs button{min-width:0;font-size:.75rem;padding:10px 4px;overflow-wrap:anywhere}
+ .report-review{min-height:0;padding:20px}
+ .report-review .report-header{flex-wrap:wrap;gap:10px;padding-bottom:16px;margin-bottom:18px}
+ .report-review .report-brand{width:130px;min-width:0;flex:0 1 130px}
+ .report-review .report-header>span{font-size:.6875rem}
+ .report-review h3{font-size:1.4rem;margin-bottom:20px}
+ .profile-chart-scroll{width:100%;min-width:0;overflow:visible;margin-bottom:18px}
+ .profile-chart-scroll>.profile-chart{display:none}
+ .mobile-profile-chart{display:grid;gap:5px;margin:0 0 14px}
+ .mobile-profile-chart>div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;align-items:center;font-size:.75rem;line-height:1.4;color:#506380}
+ .mobile-profile-chart dt{font-weight:600}
+ .mobile-profile-chart dd{display:grid;grid-template-columns:minmax(0,1fr) 27px;align-items:center;gap:8px;margin:0;text-align:right;font-variant-numeric:tabular-nums}
+ .mobile-profile-chart:before{content:"mg per 1 g protein";font-size:.75rem;font-weight:600;margin-bottom:6px;color:#506380}
+ .mobile-profile-track{height:9px;background:#edf2fc;border-radius:2px}
+ .mobile-profile-track i{display:block;height:100%;background:#91b0f7;border-radius:2px}
+ .mobile-profile-track i.tail{background:#235aff}
+ .profile-chart-legend{min-width:0;gap:14px;flex-wrap:wrap;font-size:.6875rem}
+ .report-review .report-points{min-height:0}
+ .report-review .report-points-spread{display:block}
+ .report-review .report-points>div,.report-review .report-points-spread>div{padding:16px 0}
+ .report-review .profile-chart-callout{padding:12px 14px;font-size:.8125rem;line-height:1.6}
+}

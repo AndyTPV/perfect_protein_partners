@@ -13,7 +13,8 @@ const profile = [
 export default function ProfileChart() {
   const left = 42, top = 36, bottom = 238, step = 25;
   const y = value => bottom - value / 180 * (bottom - top);
-  return <div className="profile-chart-scroll" tabIndex={0} role="region" aria-label="Example amino acid chart; scroll horizontally on smaller screens">
+  return <div className="profile-chart-scroll" tabIndex={0} role="region" aria-label="Example amino acid profile in milligrams per one gram of protein">
+    <dl className="mobile-profile-chart">{profile.map(([abbr, name, value], i) => <div key={abbr}><dt title={name}>{abbr}</dt><dd><span className="mobile-profile-track" aria-hidden="true"><i className={i >= 12 ? "tail" : ""} style={{ width: `${value / 180 * 100}%` }} /></span><span>{value}<span className="sr-only"> mg, {name}</span></span></dd></div>)}</dl>
     <svg className="profile-chart" viewBox="0 0 510 297" role="img" aria-label={`Fictional amino acid profile in milligrams per one gram of protein. ${profile.map(([, name, value]) => `${name}: ${value} mg`).join('; ')}. Dark blue bars illustrate the SRT tail grouping, not a calculated score.`}>
       <text className="chart-unit" x="2" y="13">mg per 1 g protein</text>
       {[0, 40, 80, 120, 160].map(value => <g key={value}>
