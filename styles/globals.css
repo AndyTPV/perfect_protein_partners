@@ -151,3 +151,13 @@
  .report-review .report-points>div,.report-review .report-points-spread>div{padding:16px 0}
  .report-review .profile-chart-callout{padding:12px 14px;font-size:.8125rem;line-height:1.6}
 }
+
+/* Short, touch-friendly topic navigation shared by supporting pages. */
+.section-navigation{margin-top:30px;max-width:1000px}
+.section-navigation-label{font-size:.6875rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#64748e;margin:0 0 12px}
+.section-navigation .detail-contents{margin:0;gap:9px;display:flex;flex-wrap:wrap}
+.section-navigation .detail-contents a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 17px;border:1px solid #d8e2f1;border-radius:24px;background:#f1f5fb;color:#304e78;font-size:.8125rem;font-weight:600;line-height:1.4;transition:background .18s,border-color .18s,color .18s;white-space:nowrap}
+.section-navigation .detail-contents a:hover{background:#e5edff;border-color:#9ebaff;color:#194fdb}
+.section-navigation .detail-contents a[aria-current="location"]{background:#245dff;border-color:#245dff;color:white;box-shadow:0 3px 10px #245dff20}
+.editorial-content>section{scroll-margin-top:24px}
+@media(max-width:760px){.section-navigation{margin-top:24px}.section-navigation .detail-contents{gap:8px}.section-navigation .detail-contents a{padding:10px 14px;font-size:.75rem}.editorial-content>section{scroll-margin-top:24px}}
