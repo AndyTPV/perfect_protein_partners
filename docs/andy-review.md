@@ -20,11 +20,11 @@ The consulting section explains how the patented method models a complementary a
 
 The story opens with two products that list the same grams of protein. It connects years of reviewing profiles with the seal standard and the findings brands can share.
 
-## PPP-A09 — Meet Andy
+## PPP-A09 — Meet Andrew Triana
 
-[Meet Andy Triana](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/about#people)
+[Meet Andrew Triana](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/about#people)
 
-The biography introduces Andrew “Andy” Triana as founder and inventor and describes his credential, work through The Performance Vibe, and role with brands today.
+The biography introduces Andrew Triana as founder and inventor and describes his credential, work through The Performance Vibe, and role with brands today.
 
 ## Resolved for this walkthrough
 
