@@ -56,7 +56,7 @@ export default function SrtExplanation() {
       </figure>
       <h3 className="srt-mps-heading">Why does PPP study the tail?</h3>
       <p>Muscle protein synthesis (MPS) is how the body builds new muscle proteins. PPP is interested in what happens after that process starts. When enough leucine and other essential amino acids are available, could a more even tail help sustain MPS longer after resistance exercise?</p>
-      <p>PPP’s position is that this possibility is worth investigating. Our model shows how a proposed adjustment changes the amino acid profile. Establishing its effect on MPS duration would require measuring that response in people.</p>
+      <p>PPP believes this approach is worth investigating for its potential value to muscle protein synthesis. Our model shows how targeted adjustments can create a more balanced amino acid profile and guide formulations designed to support this process.</p>
     </>
   );
 }
