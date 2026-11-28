@@ -1,29 +1,3 @@
-export default function Footer() {
-  return (
-    <footer className="px-6 md:px-10 py-12 bg-cream border-t border-border">
-      <div className="max-w-5xl mx-auto">
-        {/* Brand + secondary details */}
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-8">
-          <div>
-            <div className="font-heading text-sm text-ink mb-1">
-              Perfect Protein Partners
-            </div>
-            <div className="font-sans text-xs text-faint">
-              Ingredient sourcing for brands that get protein right
-            </div>
-          </div>
-          <div className="flex flex-col gap-1 font-sans text-xs text-faint sm:text-right">
-            <span>Owned and operated by The Performance Vibe LLC</span>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="pt-6 border-t border-border">
-          <p className="font-sans text-xs text-faint">
-            &copy; {new Date().getFullYear()} Perfect Protein Partners. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
+import Link from "next/link";
+import { Brand } from "./Header";
+export default function Footer() { return <footer className="site-footer"><div className="wrap footer-top"><Link href="/" className="brand" aria-label="Perfect Protein Partners home"><Brand /></Link><p>Product knowledge. Earned recognition.</p><nav aria-label="Footer navigation"><Link href="/seal#product-transparency">Packaging & transparency</Link><Link href="/opportunities">Consulting</Link><Link href="/contact">Contact</Link></nav></div><div className="wrap footer-bottom"><span>© {new Date().getFullYear()} Perfect Protein Partners</span><span>Owned and operated by The Performance Vibe LLC</span></div></footer>; }

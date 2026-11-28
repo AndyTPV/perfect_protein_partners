@@ -1,29 +1,9 @@
 "use client";
-
-import { motion } from "framer-motion";
-
+import Link from "next/link";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+export function Brand() { return <><span className="brand-mark" aria-hidden="true">PPP<i /></span><span className="brand-name">Perfect Protein<br />Partners</span></>; }
 export default function Header() {
-  return (
-    <motion.header
-      initial={{ opacity: 0, y: -12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="sticky top-0 z-50 w-full px-6 md:px-10 py-5 bg-cream border-b border-border flex items-center justify-between"
-    >
-      <span className="font-heading text-sm font-semibold text-forest tracking-tight">
-        Perfect Protein Partners
-      </span>
-      <nav className="hidden sm:flex gap-8 text-xs tracking-wide text-muted font-sans uppercase">
-        <a href="#claims" className="hover:text-forest transition-colors">
-          What we do
-        </a>
-        <a href="#who-we-serve" className="hover:text-forest transition-colors">
-          Who we work with
-        </a>
-        <a href="#contact" className="hover:text-forest transition-colors">
-          Contact
-        </a>
-      </nav>
-    </motion.header>
-  );
+  const [open, setOpen] = useState(false); const path = usePathname();
+  return <header className="site-header"><div className="header-inner"><Link href="/" className="brand" aria-label="Perfect Protein Partners home" onClick={() => setOpen(false)}><Brand /></Link><button className="menu-button" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(v => !v)}>{open ? "Close menu" : "Menu"}</button><nav id="main-navigation" aria-label="Main navigation" className={open ? "navigation is-open" : "navigation"} onKeyDown={e => { if (e.key === "Escape") { setOpen(false); document.querySelector(".menu-button")?.focus(); } }}>{[["/seal", "The seal"], ["/testing", "Testing & results"], ["/opportunities", "Consulting"], ["/about", "About PPP"]].map(([href, label]) => <Link key={href} href={href} aria-current={path === href ? "page" : undefined} onClick={() => setOpen(false)}>{label}</Link>)}<Link href="/contact" className="button small" onClick={() => setOpen(false)}>Let’s talk</Link></nav></div></header>;
 }
