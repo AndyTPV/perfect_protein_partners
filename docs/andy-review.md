@@ -1,30 +1,30 @@
 # Private website walkthrough reference
 
-Updated from Wesley’s November 27 comments. Keep the website focused on an exploratory call; detailed scope and consulting opportunities are discussed with Andy. These four small references remain in previews only.
+Andy and Wesley reviewed the four remaining topics. The links below go directly to the resulting sections. Links in the earlier walkthrough also lead to those sections.
 
 ## PPP-A02 — Seal use on packaging
 
-Location: [/seal#ppp-a02](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/seal#ppp-a02)
+[Seal packaging section](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/seal#packaging)
 
-Confirm seal eligibility and artwork rules, whether a formula change requires reapplication, and the reassessment interval. Wesley recalls a 40-week interval; confirm it before publishing.
+Retaining the seal requires reassessment at least every 40 calendar weeks, and sooner if a qualifying change occurs.
 
 ## PPP-A06 — Approved SRT explanation
 
-Location: [/opportunities#ppp-a06](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/opportunities#ppp-a06)
+[SRT identification](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/opportunities#srt)
 
-Provide a brief public explanation of SRT and how it could inform future consulting after laboratory analysis. Keep the deeper method and product-specific opportunities for the conversation.
+The consulting section explains how the patented method models a complementary amino acid adjustment. The illustration compares two fictional tails. MPS duration is presented as a research question.
 
 ## PPP-A08 — Company story
 
-Location: [/about#ppp-a08](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/about#ppp-a08)
+[Company story](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/about#our-story)
 
-Provide the approved origin story, founding date if relevant, mission and any background or intellectual-property details you want published. No dates or patent claims have been invented.
+The story opens with two products that list the same grams of protein. It connects years of reviewing profiles with the seal standard and the findings brands can share.
 
-## PPP-A09 — Andy and the team
+## PPP-A09 — Meet Andy
 
-Location: [/about#ppp-a09](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/about#ppp-a09)
+[Meet Andy Triana](https://perfect-protein-partners-git-rede-9137ff-perfectproteinpartners.vercel.app/about#people)
 
-Provide Andy’s preferred public name and role, a short approved biography, relevant experience or credentials, and an authorized photograph. Focus this section on Andy; leave other team introductions for a later decision.
+The biography introduces Andrew “Andy” Triana as founder and inventor and describes his credential, work through The Performance Vibe, and role with brands today.
 
 ## Resolved for this walkthrough
 

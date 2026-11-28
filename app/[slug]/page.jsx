@@ -4,7 +4,7 @@ import { pages } from "@/lib/pages";
 import CallToAction from "@/components/CallToAction";
 import SealArtwork from "@/components/SealArtwork";
 import SectionNav from "@/components/SectionNav";
-import AndyReview from "@/components/AndyReview";
+import SrtExplanation from "@/components/SrtExplanation";
 import ProfileChart from "@/components/ProfileChart";
 import ReportBrand from "@/components/ReportBrand";
 export function generateStaticParams() { return Object.keys(pages).map(slug => ({ slug })); }
@@ -19,7 +19,21 @@ export default async function DetailPage({ params }) {
     <section className="detail-hero wrap"><Link className="breadcrumb" href="/">Perfect Protein Partners</Link><p className="eyebrow">{page.eyebrow}</p><h1>{page.heading[0]}<br /><em>{page.heading[1]}</em></h1><p className="lead">{page.intro}</p><SectionNav sections={page.sections.map(section => ({ id: section.id, label: section.navLabel }))} /></section>
     {slug === "seal" && <div className="wrap detail-seal detail-seal-current"><SealArtwork /></div>}
     {slug === "testing" && <section className="dark section"><div className="wrap results-layout"><div><p className="eyebrow light">Read the reporting basis</p><h2>The quantities.<br />And what they refer to.</h2><p>This example shows amino acid quantities per gram of protein. Serving-based findings and quantities per product weight need their own clearly labelled basis.</p><Link href="/#results" className="text-link light-link">Explore the report preview</Link></div><div className="report-paper detail-profile-example"><div className="report-header"><ReportBrand /><span>Protein profile<br />Fictional example</span></div><h3>A profile you can examine.</h3><ProfileChart /></div></div></section>}
-    <div className="wrap editorial-content">{page.sections.map(section => <section key={section.id} id={section.id}><h2>{section.title}</h2><p>{section.text}</p>{section.links && <div className="detail-section-links">{section.links.map(link => <Link key={link.href} className="text-link" href={link.href}>{link.label}</Link>)}</div>}{section.reviewId && <AndyReview reviewId={section.reviewId} />}</section>)}</div>
+    <div className="wrap editorial-content">
+      {page.sections.map(section => (
+        <section key={section.id} id={section.id}>
+          <h2 id={section.legacyAnchor}>{section.title}</h2>
+          {section.subtitle && <p className="detail-subtitle">{section.subtitle}</p>}
+          {(section.paragraphs ?? [section.text]).map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          {section.links && (
+            <div className="detail-section-links">
+              {section.links.map(link => <Link key={link.href} className="text-link" href={link.href}>{link.label}</Link>)}
+            </div>
+          )}
+          {section.id === "srt" && <SrtExplanation />}
+        </section>
+      ))}
+    </div>
     <CallToAction {...page.cta} showNote={false} />
   </>;
 }

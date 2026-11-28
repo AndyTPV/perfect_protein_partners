@@ -1,20 +1,18 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { pages } from "../lib/pages.js";
-import { andyReviews } from "../lib/andy-review.mjs";
 import nextConfig from "../next.config.mjs";
 
-test("review IDs are unique and identify exactly one real page section", () => {
- assert.deepEqual(andyReviews.map(item => item.id), ["PPP-A02", "PPP-A06", "PPP-A08", "PPP-A09"]);
- assert.equal(new Set(andyReviews.map(item => item.id)).size, andyReviews.length);
- assert.equal(new Set(andyReviews.map(item => item.anchor)).size, andyReviews.length);
- const assigned = Object.entries(pages).flatMap(([page, data]) => data.sections.filter(s => s.reviewId).map(s => ({ page, section: s.id, reviewId: s.reviewId })));
- for (const item of andyReviews) {
-  const matches = assigned.filter(s => s.reviewId === item.id);
-  assert.equal(matches.length, 1, item.id);
-  assert.equal(matches[0].page, item.page);
-  assert.equal(matches[0].section, item.section);
- }
+test("links from the private walkthrough still reach the resolved topics", () => {
+ const targets = Object.entries(pages).flatMap(([page, data]) => data.sections
+  .filter(section => section.legacyAnchor)
+  .map(section => [page, section.id, section.legacyAnchor]));
+ assert.deepEqual(targets, [
+  ["seal", "packaging", "ppp-a02"],
+  ["opportunities", "srt", "ppp-a06"],
+  ["about", "our-story", "ppp-a08"],
+  ["about", "people", "ppp-a09"],
+ ]);
 });
 test("merged page redirects lead to existing section anchors", async () => {
  const redirects = await nextConfig.redirects();

@@ -13,7 +13,7 @@ npm run build
 
 ## Private walkthrough references
 
-Small `*** PPP-A02`, `*** PPP-A06`, `*** PPP-A08` and `*** PPP-A09` references sit beneath the relevant sections in previews. The detailed questions are in the separate walkthrough document and `docs/andy-review.md`; they are not rendered on the website. There is no review banner or checklist link, and `/review` returns not found in every environment. References are omitted when `VERCEL_ENV=production`. Andy's pending input still needs resolution before a production launch.
+The decisions from Andy’s walkthrough are recorded in `docs/andy-review.md`. Its original fragment links still open the corresponding sections. The four review markers have been retired.
 
 ## Navigation and examples
 
@@ -31,4 +31,4 @@ Production uses `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `NEX
 
 ## Release status
 
-This is a draft review checkpoint. No production merge, promotion or domain switch is authorized by the review workflow. Mobile review and Andy's flagged details remain pending. Keep the company identity distinct from product-specific star ratings. Testing scope, contextual limitations and cost uncertainty are explained on their relevant pages.
+This is a draft review checkpoint. No production merge, promotion or domain switch is authorized by the review workflow. Keep the company identity distinct from product-specific star ratings. Testing scope, contextual limitations and cost uncertainty are explained on their relevant pages.
